@@ -18,12 +18,12 @@ import java.util.Deque;
  * - Slower for very large traffic
  */
 
-class SlidingWindowRateLimiter implements RateLimiter {
+class SlidingWindowLogRateLimiter implements RateLimiter {
     private final int limit;
     private final long windowMs;
     private final Deque<Long> log = new ArrayDeque<>();
 
-    public SlidingWindowRateLimiter(int limit, Duration window) {
+    public SlidingWindowLogRateLimiter(int limit, Duration window) {
         this.limit = limit;
         this.windowMs = window.toMillis();
     }

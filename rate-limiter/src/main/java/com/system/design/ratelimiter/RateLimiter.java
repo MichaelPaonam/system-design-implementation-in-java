@@ -1,4 +1,5 @@
 package com.system.design.ratelimiter;
 
-public interface RateLimiter {
+interface RateLimiter {
+    boolean allowRequest();
 }
